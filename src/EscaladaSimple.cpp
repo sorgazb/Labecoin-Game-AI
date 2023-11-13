@@ -28,21 +28,22 @@ void EscaladaSimple::escaladaSimple() {
 	Robot.setJ(jRobot);
 	Coordenada Salida;
 	Coordenada SalidaAux;
-	int iSalida=100;
-	int jSalida=100;
-	t->buscarSalida(iSalida, jSalida);
-	Salida.setI(iSalida);
-	Salida.setJ(jSalida);
-	SalidaAux=Salida;
+
+	//En buscar salida se comprueba que la misma se encuentre dentro de márgenes
+	//Solo ocurre una vez por escalada
+	//Añado parámetro fin e/s en buscarSalida
+
+	int iSalida=0;
+	int jSalida=0;
 	bool fin=false;
-	while(fin==false){
-		if(Salida.getI()>10){
-			if(Salida.getJ()>10){
-				cout<<"No hay salida"<<endl;
-				fin=true;
-			}
-		}
-		else{
+	t->buscarSalida(iSalida, jSalida, fin);
+
+		Salida.setI(iSalida);
+		Salida.setJ(jSalida);
+		SalidaAux=Salida;
+
+		while(fin==false){
+
 			if(valor!=0){
 				t->buscarRobot(iRobot, jRobot);
 				if(t->cuantasMonedas()!=0){
@@ -69,7 +70,6 @@ void EscaladaSimple::escaladaSimple() {
 				}
 			}
 		}
-	}
 	t1=clock();
 	double tiempo= (double(t1-t0)/CLOCKS_PER_SEC);
 	cout<<"- La búsqueda ha durado: "<<tiempo<<endl;

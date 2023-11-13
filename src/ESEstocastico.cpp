@@ -31,11 +31,11 @@ void ESEstocastico::escaladaSimpleEsto() {
 	Coordenada SalidaAux;
 	int iSalida=100;
 	int jSalida=100;
-	t->buscarSalida(iSalida, jSalida);
+	bool fin=false;
+	t->buscarSalida(iSalida, jSalida, fin);
 	Salida.setI(iSalida);
 	Salida.setJ(jSalida);
 	SalidaAux=Salida;
-	bool fin=false;
 	while(fin==false){
 		if(Salida.getI()>10){
 			if(Salida.getJ()>10){

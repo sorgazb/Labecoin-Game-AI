@@ -98,7 +98,7 @@ void Tablero::buscarRobot(int &i, int &j) {
 	}
 }
 
-void Tablero::buscarSalida(int &i, int &j) {
+void Tablero::buscarSalida(int &i, int &j, bool &fin) {
 	bool enc=false;
 	while(enc==false){
 		for(int pi=0; pi<this->fila; pi++){
@@ -110,11 +110,17 @@ void Tablero::buscarSalida(int &i, int &j) {
 				}
 			}
 		}
-		if(enc==false){
-			i=11;
-			j=11;
-			enc=true;
+	}
+
+	if(!enc){
+		cout<<"No hay salida"<<endl;
+		fin=true;
+	}else{
+		if(i>LIM && j>LIM){
+			cout<<"Salida fuera de margen"<<endl;
+			fin=true;
 		}
+
 	}
 
 }

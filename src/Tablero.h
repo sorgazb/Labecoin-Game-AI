@@ -48,7 +48,7 @@ public:
 	void imprimirTablero();
 
 	void buscarRobot(int &i, int &j);
-	void buscarSalida(int &i, int &j);
+	void buscarSalida(int &i, int &j, bool &fin);
 
 	void moverArriba(int i, int j);
 	void moverAbajo(int i, int j);
