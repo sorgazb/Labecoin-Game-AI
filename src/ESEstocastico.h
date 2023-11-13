@@ -33,7 +33,7 @@ public:
 
 	bool estocastico(Coordenada c, Coordenada next, int valor, Coordenada destino);
 
-	
+
 	virtual ~ESEstocastico();
 };
 
