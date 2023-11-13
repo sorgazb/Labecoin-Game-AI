@@ -32,7 +32,7 @@ void EscaladaSimple::escaladaSimple() {
 	//En buscar salida se comprueba que la misma se encuentre dentro de márgenes
 	//Solo ocurre una vez por escalada
 	//Añado parámetro fin e/s en buscarSalida
-
+	cout << "CONCLIFTO GIT" << endl;
 	int iSalida=0;
 	int jSalida=0;
 	bool fin=false;
