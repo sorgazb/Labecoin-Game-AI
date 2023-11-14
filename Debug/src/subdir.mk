@@ -16,19 +16,6 @@ CPP_SRCS += \
 ../src/Tablero.cpp \
 ../src/vectorMonedas.cpp 
 
-OBJS += \
-./src/Coordenada.o \
-./src/ESEstocastico.o \
-./src/EscaladaSimple.o \
-./src/Fichero.o \
-./src/FuncionDistancia.o \
-./src/FuncionRentabilidad.o \
-./src/IASI.o \
-./src/MaximaPendiente.o \
-./src/Moneda.o \
-./src/Tablero.o \
-./src/vectorMonedas.o 
-
 CPP_DEPS += \
 ./src/Coordenada.d \
 ./src/ESEstocastico.d \
@@ -42,6 +29,19 @@ CPP_DEPS += \
 ./src/Tablero.d \
 ./src/vectorMonedas.d 
 
+OBJS += \
+./src/Coordenada.o \
+./src/ESEstocastico.o \
+./src/EscaladaSimple.o \
+./src/Fichero.o \
+./src/FuncionDistancia.o \
+./src/FuncionRentabilidad.o \
+./src/IASI.o \
+./src/MaximaPendiente.o \
+./src/Moneda.o \
+./src/Tablero.o \
+./src/vectorMonedas.o 
+
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.o: ../src/%.cpp src/subdir.mk
@@ -51,4 +51,11 @@ src/%.o: ../src/%.cpp src/subdir.mk
 	@echo 'Finished building: $<'
 	@echo ' '
 
+
+clean: clean-src
+
+clean-src:
+	-$(RM) ./src/Coordenada.d ./src/Coordenada.o ./src/ESEstocastico.d ./src/ESEstocastico.o ./src/EscaladaSimple.d ./src/EscaladaSimple.o ./src/Fichero.d ./src/Fichero.o ./src/FuncionDistancia.d ./src/FuncionDistancia.o ./src/FuncionRentabilidad.d ./src/FuncionRentabilidad.o ./src/IASI.d ./src/IASI.o ./src/MaximaPendiente.d ./src/MaximaPendiente.o ./src/Moneda.d ./src/Moneda.o ./src/Tablero.d ./src/Tablero.o ./src/vectorMonedas.d ./src/vectorMonedas.o
+
+.PHONY: clean-src
 

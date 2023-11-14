@@ -16,8 +16,8 @@ using namespace std;
 #include "Coordenada.h"
 #include "Moneda.h"
 #include "vectorMonedas.h"
-#include "Fichero.h";
-#include "FuncionDistancia.h";
+#include "Fichero.h"
+#include "FuncionDistancia.h"
 #include "FuncionRentabilidad.h"
 
 const int LIM=10;

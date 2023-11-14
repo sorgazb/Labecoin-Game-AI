@@ -53,6 +53,6 @@ void vectorMonedas::eliminar(Coordenada c) {
 }
 
 vectorMonedas::~vectorMonedas() {
-	delete vMoneda;
+	delete[] vMoneda;
 }
 
