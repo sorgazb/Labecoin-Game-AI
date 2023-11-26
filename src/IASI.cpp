@@ -15,7 +15,7 @@ using namespace std;
 
 int menuAlgoritmo(){
 	cout<<"Menú Seleccion Algoritmo"<<endl;
-	int opcion;
+	int opcion = 0;
 	do{
 		cout<<"1-Escalada Simple (Moneda Cercana)"<<endl;
 		cout<<"2-Maxima Pendiente (Mejor Moneda Cercana)"<<endl;
@@ -30,7 +30,8 @@ int menuAlgoritmo(){
 
 void seleccionarAlgoritmo(){
 	int opcion;
-	opcion=menuAlgoritmo();
+	//opcion=menuAlgoritmo();
+	opcion=2;
 	switch(opcion){
 	case 1:
 		cout<<"Has seleccionado ESCALADA SIMPLE: "<<endl;
@@ -58,5 +59,6 @@ void seleccionarAlgoritmo(){
 
 int main() {
 	seleccionarAlgoritmo();
+    //system("powershell.exe Start-Process -FilePath .\\debug\\Labecoin.exe");
 	return 0;
 }

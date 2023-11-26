@@ -34,8 +34,8 @@ void MaximaPendiente::maximaPendiente() {
 	SalidaAux=Salida;
 	bool fin=false;
 	while(fin==false){
-		if(Salida.getI()>10){
-			if(Salida.getJ()>10){
+		if(Salida.getI()>LIM){
+			if(Salida.getJ()>LIM){
 				cout<<"No hay salida"<<endl;
 				fin=true;
 			}
