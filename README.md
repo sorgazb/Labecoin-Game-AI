@@ -1,5 +1,5 @@
 # Labecoin-Game-AI
-Juego creado por @sorgazb para la asignatura EASI de GIIC en la UEX
+Juego creado por @sorgazb en colabroación con @vvaldesc para la asignatura EASI de GIIC en la UEX
 
 actualmente en desarrollo 
 
