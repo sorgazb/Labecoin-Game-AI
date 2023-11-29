@@ -143,70 +143,7 @@ void ESEstocastico::avanzar(Coordenada inicio, Coordenada destino, int &avanzar,
 							avanzar=1;
 
 					}
-					else{
-						nodos=nodos+1;
-						Coordenada auxARD;
-						auxARD.setI(inicio.getI()-1);
-						auxARD.setJ(inicio.getJ()+1);
-						if(t->sePuedeArribaDerecha(i, j)==true && esMenorDistancia(inicio, auxARD, destino)==true && estaVisitada(auxARD)==false && estocastico(inicio, auxARD, mejora, destino)==true){
 
-								t->moverArribaDerecha(i, j);
-								insertarCasilla(auxARD);
-								cout<<"Movimiento realizado: AR-D"<<endl;
-								mov=true;
-								avanzar=1;
-
-						}
-						else{
-							nodos=nodos+1;
-							Coordenada auxARI;
-							auxARI.setI(inicio.getI()-1);
-							auxARI.setJ(inicio.getJ()-1);
-							if(t->sePuedeArribaIzquierda(i, j)==true && esMenorDistancia(inicio, auxARI, destino)==true && estaVisitada(auxARI)==false && estocastico(inicio, auxARI, mejora, destino)==true){
-									t->moverArribaIzquierda(i, j);
-									insertarCasilla(auxARI);
-									cout<<"Movimiento realizado: AR-I"<<endl;
-									mov=true;
-									avanzar=1;
-
-							}
-							else{
-								nodos=nodos+1;
-								Coordenada auxABD;
-								auxABD.setI(inicio.getI()+1);
-								auxABD.setJ(inicio.getJ()+1);
-								if(t->sePuedeAbajoDerecha(i, j)==true && esMenorDistancia(inicio, auxABD, destino)==true && estaVisitada(auxABD) && estocastico(inicio, auxABD, mejora, destino)==true){
-
-										t->moverAbajoDerecha(i, j);
-										insertarCasilla(auxABD);
-										cout<<"Movimiento realizado: AB-D"<<endl;
-										mov=true;
-										avanzar=1;
-
-								}
-								else{
-									nodos=nodos+1;
-									Coordenada auxABI;
-									auxABI.setI(inicio.getI()+1);
-									auxABI.setJ(inicio.getJ()-1);
-									if(t->sePuedeAbajoIzquierda(i, j)==true && esMenorDistancia(inicio, auxABI, destino)==true && estaVisitada(auxABI)==false && estocastico(inicio, auxABI, mejora, destino)==true){
-
-											t->moverArribaIzquierda(i, j);
-											insertarCasilla(auxABI);
-											cout<<"Movimiento realizado: AB-I"<<endl;
-											mov=true;
-											avanzar=1;
-
-									}
-									else{
-										cout<<"No se ha podido avanzar a otra posicion"<<endl;
-										mov=true;
-										avanzar=0;
-									}
-								}
-							}
-						}
-					}
 				}
 			}
 		}

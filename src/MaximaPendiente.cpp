@@ -118,10 +118,6 @@ void MaximaPendiente::avanzar2(Coordenada inicio, Coordenada destino,int &avanza
 	double distancia2=1000000;
 	double distancia3=1000000;
 	double distancia4=1000000;
-	double distancia5=1000000;
-	double distancia6=1000000;
-	double distancia7=1000000;
-	double distancia8=1000000;
 	t->buscarRobot(i, j);
 	inicio.setI(i);
 	inicio.setJ(j);
@@ -186,77 +182,8 @@ void MaximaPendiente::avanzar2(Coordenada inicio, Coordenada destino,int &avanza
 				distanciaMejor=distancia4;
 			}
 		}
-		Coordenada auxARD;
-		auxARD.setI(inicio.getI()-1);
-		auxARD.setJ(inicio.getJ()+1);
-		if(t->sePuedeArribaDerecha(i, j)==true && estaVisitada(auxARD)==false){
-			nodos=nodos+1;
-			distancia5=d.compararDistancia(auxARD, destino);
-			if(distanciaMejor!=1000000){
-				if(distanciaInicio > distancia5){
-					if(distancia5 < distanciaMejor){
-						distanciaMejor=distancia5;
-					}
-				}
 
-			}
-			else{
-				distanciaMejor=distancia5;
-			}
-		}
-		Coordenada auxARI;
-		auxARI.setI(inicio.getI()-1);
-		auxARI.setJ(inicio.getJ()-1);
-		if(t->sePuedeArribaIzquierda(i, j)==true && estaVisitada(auxARI)==false){
-			nodos=nodos+1;
-			distancia6=d.compararDistancia(auxARI, destino);
-			if(distanciaMejor!=1000000){
-				if(distanciaInicio > distancia6){
-					if(distancia6 < distanciaMejor){
-						distanciaMejor=distancia6;
-					}
-				}
 
-			}
-			else{
-				distanciaMejor=distancia6;
-			}
-		}
-		Coordenada auxABD;
-		auxABD.setI(inicio.getI()+1);
-		auxABD.setJ(inicio.getJ()+1);
-		if(t->sePuedeAbajoDerecha(i, j)==true && estaVisitada(auxABD)==false){
-			nodos=nodos+1;
-			distancia7=d.compararDistancia(auxABD, destino);
-			if(distanciaMejor!=1000000){
-				if(distanciaInicio > distancia7){
-					if(distancia7 < distanciaMejor){
-						distanciaMejor=distancia7;
-					}
-				}
-
-			}
-			else{
-				distanciaMejor=distancia7;
-			}
-		}
-		Coordenada auxABI;
-		auxABI.setI(inicio.getI()+1);
-		auxABI.setJ(inicio.getJ()-1);
-		if(t->sePuedeAbajoIzquierda(i, j)==true && estaVisitada(auxABI)==false){
-			nodos=nodos+1;
-			distancia8=d.compararDistancia(auxABI, destino);
-			if(distanciaMejor!=1000000){
-				if(distanciaInicio > distancia8){
-					if(distancia8 < distanciaMejor){
-						distanciaMejor=distancia8;
-					}
-				}
-			}
-			else{
-				distanciaMejor=distancia8;
-			}
-		}
 		if(distanciaMejor!=1000000){
 			if(inicio.getI()!= destino.getI() || inicio.getJ()!=destino.getJ()){
 				if(distanciaMejor==distancia1){
@@ -289,42 +216,6 @@ void MaximaPendiente::avanzar2(Coordenada inicio, Coordenada destino,int &avanza
 								cout<<"Movimiento Realizado: I"<<endl;
 								mov=true;
 								avanzar=1;
-							}
-							else{
-								if(distanciaMejor==distancia5){
-									t->moverArribaDerecha(i, j);
-									insertarCasilla(auxARD);
-									cout<<"Movimiento Realizado: ARD"<<endl;
-									mov=true;
-									avanzar=1;
-								}
-								else{
-									if(distanciaMejor==distancia6){
-										t->moverArribaIzquierda(i, j);
-										insertarCasilla(auxARI);
-										cout<<"Movimeinto Realizado: ARI"<<endl;
-										mov=true;
-										avanzar=1;
-									}
-									else{
-										if(distanciaMejor==distancia7){
-											t->moverAbajoDerecha(i, j);
-											insertarCasilla(auxABD);
-											cout<<"Movimiento Realizado: ABD"<<endl;
-											mov=true;
-											avanzar=1;
-										}
-										else{
-											if(distanciaMejor==distancia8){
-												t->moverAbajoIzquierda(i, j);
-												insertarCasilla(auxABI);
-												cout<<"Movimiento Realizado: ABI"<<endl;
-												mov=true;
-												avanzar=1;
-											}
-										}
-									}
-								}
 							}
 						}
 					}
