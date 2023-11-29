@@ -42,6 +42,7 @@ void MaximaPendiente::maximaPendiente() {
 		}
 		else{
 			if(valor!=0){
+				//PROBABLEMENTE BÚSQUEDA INNECESARIA DEBIDO A QUE SE REPITE EN IF Y ELSE
 				t->buscarRobot(iRobot, jRobot);
 				if(t->cuantasMonedas()!=0){
 					Moneda *cercana;
@@ -111,6 +112,7 @@ void MaximaPendiente::avanzar2(Coordenada inicio, Coordenada destino,int &avanza
 	double distanciaInicio=d.compararDistancia(inicio, destino);
 	avanzar=0;
 	bool mov=false;
+
 	int i;
 	int j;
 	double distanciaMejor=1000000;
@@ -136,7 +138,7 @@ void MaximaPendiente::avanzar2(Coordenada inicio, Coordenada destino,int &avanza
 		if(t->sePuedeAbajo(i, j)==true && estaVisitada(auxAb)==false){
 			nodos=nodos+1;
 			distancia2=d.compararDistancia(auxAb, destino);
-			if(distanciaMejor!=1000000){
+			if(distanciaMejor!=1000000){//NO ENTIENDO ESTA CONDICIÓN
 				if(distanciaInicio > distancia2){
 					if(distancia2 < distanciaMejor){
 						distanciaMejor=distancia2;
@@ -165,6 +167,7 @@ void MaximaPendiente::avanzar2(Coordenada inicio, Coordenada destino,int &avanza
 			}
 		}
 		Coordenada auxI;
+		//NO ENTIENDO ESTO, PARA QUE CREAS UNA COORDENADA AUXILIAR SI NO LA VAS A USAR EN SEPUEDEIZQUIERDA, PERO DE REÈNTE LA USAS EN ESTAVISITADA
 		auxI.setI(inicio.getI());
 		auxI.setJ(inicio.getJ()-1);
 		if(t->sePuedeIzquierda(i, j)==true && estaVisitada(auxI)==false){

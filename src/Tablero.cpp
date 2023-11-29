@@ -22,8 +22,7 @@ void Tablero::cargarTablero() {
 	int eObjetivo;
 	int eValor;
 	ifstream flujoTablero;
-	//cuidao
-	flujoTablero.open("LABECOIN11.txt");
+	flujoTablero.open(nombreLaberinto);
 	if(flujoTablero.is_open()){
 		getline(flujoTablero,objetivo);
 		eObjetivo = stoi(objetivo);

@@ -20,7 +20,7 @@ using namespace std;
 #include "FuncionDistancia.h"
 #include "FuncionRentabilidad.h"
 
-const int LIM=10;
+const int LIM=13;
 
 class Tablero {
 
@@ -54,19 +54,13 @@ public:
 	void moverAbajo(int i, int j);
 	void moverDerecha(int  i, int j);
 	void moverIzquierda(int i, int j);
-	void moverArribaIzquierda(int i, int j);
-	void moverArribaDerecha(int i, int j);
-	void moverAbajoIzquierda(int i, int j);
-	void moverAbajoDerecha(int i, int j);
+
 
 	bool sePuedeArriba(int i, int j);
 	bool sePuedeAbajo(int i, int j);
 	bool sePuedeIzquierda(int i, int j);
 	bool sePuedeDerecha(int i, int j);
-	bool sePuedeArribaDerecha(int i, int j);
-	bool sePuedeArribaIzquierda(int i, int j);
-	bool sePuedeAbajoDerecha(int i, int j);
-	bool sePuedeAbajoIzquierda(int i, int j);
+
 
 	void buscarMonedaCercana(Coordenada inicio, Moneda *&m);
 
