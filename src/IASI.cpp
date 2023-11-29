@@ -30,14 +30,13 @@ int menuAlgoritmo(){
 
 void seleccionarAlgoritmo(){
 	int opcion;
-	//opcion=menuAlgoritmo();
-	opcion=2;
+	opcion=menuAlgoritmo();
 	switch(opcion){
 	case 1:
 		cout<<"Has seleccionado ESCALADA SIMPLE: "<<endl;
-		EscaladaSimple *e;
+		/*EscaladaSimple *e;
 		e= new EscaladaSimple();
-		e->escaladaSimple();
+		e->escaladaSimple();*/
 		break;
 	case 2:
 		cout<<"Has seleccionado MAXIMA PENDIENTE: "<<endl;
@@ -47,9 +46,9 @@ void seleccionarAlgoritmo(){
 		break;
 	case 3:
 		cout<<"Has seleccionado ESCALADA SIMPLE ESTOCASTICO: "<<endl;
-		ESEstocastico *j;
+		/*ESEstocastico *j;
 		j= new ESEstocastico();
-		j->escaladaSimpleEsto();
+		j->escaladaSimpleEsto();*/
 		break;
 	default :
 		break;

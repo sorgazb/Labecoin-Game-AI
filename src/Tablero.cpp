@@ -180,67 +180,6 @@ void Tablero::moverIzquierda(int i, int j) {
 	}
 }
 
-void Tablero::moverArribaIzquierda(int i, int j) {
-	if(sePuedeArribaIzquierda(i, j)==true){
-		int robot=tableroJuego[i][j];
-		if(estoyMoneda(i-1, j-1)==true){
-			recogerMoneda(i-1, j-1);
-			tableroJuego[i][j]=0;
-			tableroJuego[i-1][j-1]=robot;
-		}
-		else{
-			tableroJuego[i][j]=0;
-			tableroJuego[i-1][j-1]=robot;
-		}
-	}
-}
-
-void Tablero::moverArribaDerecha(int i, int j) {
-	if(sePuedeArribaDerecha(i, j)==true){
-		int robot=tableroJuego[i][j];
-		if(estoyMoneda(i-1, j+1)==true){
-			recogerMoneda(i-1, j+1);
-			tableroJuego[i][j]=0;
-			tableroJuego[i-1][j+1]=robot;
-		}
-		else{
-			tableroJuego[i][j]=0;
-			tableroJuego[i-1][j+1]=robot;
-		}
-	}
-}
-
-void Tablero::moverAbajoIzquierda(int i, int j) {
-	if(sePuedeAbajoIzquierda(i, j)==true){
-		int robot=tableroJuego[i][j];
-		if(estoyMoneda(i+1, j-1)==true){
-			recogerMoneda(i+1, j-1);
-			tableroJuego[i][j]=0;
-			tableroJuego[i+1][j-1]=robot;
-		}
-		else{
-			tableroJuego[i][j]=0;
-			tableroJuego[i+1][j-1]=robot;
-		}
-	}
-}
-
-void Tablero::moverAbajoDerecha(int i, int j) {
-	if(sePuedeAbajoDerecha(i, j)==true){
-		int robot=tableroJuego[i][j];
-		if(estoyMoneda(i+1, j+1)==true){
-			recogerMoneda(i+1, j+1);
-			tableroJuego[i][j]=0;
-			tableroJuego[i+1][j+1]=robot;
-		}
-		else{
-			tableroJuego[i][j]=0;
-			tableroJuego[i+1][j+1]=robot;
-		}
-	}
-}
-
-
 bool Tablero::sePuedeArriba(int i, int j) {
 	bool puede=true;
 	if(tableroJuego[i-1][j]==9){
@@ -268,38 +207,6 @@ bool Tablero::sePuedeIzquierda(int i, int j) {
 bool Tablero::sePuedeDerecha(int i, int j) {
 	bool puede=true;
 	if(tableroJuego[i][j+1]==9){
-		puede=false;
-	}
-	return puede;
-}
-
-bool Tablero::sePuedeArribaDerecha(int i, int j) {
-	bool puede=true;
-	if(tableroJuego[i-1][j+1]==9){
-		puede=false;
-	}
-	return puede;
-}
-
-bool Tablero::sePuedeArribaIzquierda(int i, int j) {
-	bool puede=true;
-	if(tableroJuego[i-1][j-1]==9){
-		puede=false;
-	}
-	return puede;
-}
-
-bool Tablero::sePuedeAbajoDerecha(int i, int j) {
-	bool puede=true;
-	if(tableroJuego[i+1][j+1]==9){
-		puede=false;
-	}
-	return puede;
-}
-
-bool Tablero::sePuedeAbajoIzquierda(int i, int j) {
-	bool puede=true;
-	if(tableroJuego[i+1][j-1]==9){
 		puede=false;
 	}
 	return puede;

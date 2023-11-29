@@ -38,8 +38,7 @@ int Fichero::menu() {
 
 void Fichero::seleccionarTablero(string &nombreLaberinto) {
 	int opcion;
-		//opcion=menu();
-		opcion=11;
+		opcion=menu();
 		switch(opcion){
 		case 1:
 			cout<<"Has seleccionado LABECOIN1:"<<endl;
