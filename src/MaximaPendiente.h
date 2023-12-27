@@ -8,6 +8,7 @@
 #ifndef MAXIMAPENDIENTE_H_
 #define MAXIMAPENDIENTE_H_
 #include <ctime>
+#include <windows.h>
 #include "Tablero.h"
 #include "FuncionRentabilidad.h"
 
