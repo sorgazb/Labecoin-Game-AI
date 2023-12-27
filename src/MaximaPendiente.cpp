@@ -34,6 +34,7 @@ void MaximaPendiente::maximaPendiente() {
 	SalidaAux=Salida;
 	bool fin=false;
 	while(fin==false){
+		Sleep(1000);
 		if(Salida.getI()>LIM){
 			if(Salida.getJ()>LIM){
 				cout<<"No hay salida"<<endl;
@@ -42,7 +43,6 @@ void MaximaPendiente::maximaPendiente() {
 		}
 		else{
 			if(valor!=0){
-				//PROBABLEMENTE BÚSQUEDA INNECESARIA DEBIDO A QUE SE REPITE EN IF Y ELSE
 				t->buscarRobot(iRobot, jRobot);
 				if(t->cuantasMonedas()!=0){
 					Moneda *cercana;
@@ -74,6 +74,7 @@ void MaximaPendiente::maximaPendiente() {
 				}
 			}
 		}
+		t->imprimirTablero();
 	}
 	t1=clock();
 	double tiempo= (double(t1-t0)/CLOCKS_PER_SEC);
